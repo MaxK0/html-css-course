@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 span {
     font-style: italic;
 }
@@ -12,4 +17,38 @@ ol {
     counter-increment: li;
     /* С помощью свойства content выводится номер пункта списка. counters() означает, что генерируемый текст представляет собой значения всех счетчиков с таким именем. Точка в кавычках добавляет разделяющую точку между цифрами, а точка с пробелом добавляется перед содержимым каждого пункта списка */
     content: counters(li, ".") ". ";
+ }
+
+ p {
+    margin: 0.5em 0;
+ }
+
+ .list-container {
+    display: inline-block;
+    border-style: solid;
+    border-width: 0.5px;
+    padding: 5px 20px 0 5px;
+ }
+
+ .list-container > p {
+    text-align: center;
+    font-weight: bold;
+ }
+
+ .img-container {
+    float: right;
+    margin: 0 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    padding: 5px;
+ }
+
+ .img-container > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+
+ .logo-html {
+    max-width: 70px;
  }
