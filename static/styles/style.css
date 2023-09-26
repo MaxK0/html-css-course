@@ -12,15 +12,17 @@ ol {
     /* Идентифицируем счетчик и даем ему имя li. Значение счетчика не указано - по умолчанию оно равно 0 */
     counter-reset: li;
  }
- li:before {
+
+ p {
+    margin: 0.5em 0;
+ }
+
+/* Контент */
+.list-container  li:before {
     /* Определяем элемент, который будет нумероваться — li. Псевдоэлемент before указывает, что содержимое, вставляемое при помощи свойства content, будет располагаться перед пунктами списка. Здесь же устанавливается значение приращения счетчика (по умолчанию равно 1). */
     counter-increment: li;
     /* С помощью свойства content выводится номер пункта списка. counters() означает, что генерируемый текст представляет собой значения всех счетчиков с таким именем. Точка в кавычках добавляет разделяющую точку между цифрами, а точка с пробелом добавляется перед содержимым каждого пункта списка */
     content: counters(li, ".") ". ";
- }
-
- p {
-    margin: 0.5em 0;
  }
 
  .list-container {
@@ -52,3 +54,29 @@ ol {
  .logo-html {
     max-width: 70px;
  }
+
+ /* Верхняя навигационная панель */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(201, 216, 229);
+}
+
+ .nav-container ul {
+    display: flex;
+    list-style: none;
+ }
+
+.nav-container a {
+   display: block;
+   padding: 10px;
+   border-style: solid;
+   border-width: 0.5px;
+}
+
+@media (max-width: 900px) {
+   .nav-container {
+      flex-direction: column;
+   }
+}
